@@ -27,13 +27,13 @@ const defaultAnnotations = [
 const entities = [
   {
     id: 1,
-    name: "Annotation Type 1",
+    name: "Entity 1",
     color: "#4DD0E1",
     entityType: "NER",
   },
   {
     id: 2,
-    name: "Annotation Type 2",
+    name: "Entity 2",
     color: "#4DB6AC",
     entityType: "NER",
   },
