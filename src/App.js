@@ -9,18 +9,19 @@ const defaultAnnotations = [
   {
     id: 1,
     page: 1,
-    areaAnnotation: {
-      boundingBox: { left: 60, top: 35, width: 230, height: 38 },
-      pdfInformation: { width: 892.92, height: 1262.835, scale: 1.5 },
-      text: "SlicedInvoices",
-    },
-    entity: { id: 7, name: "Logo", color: "#b39ddb", entityType: "AREA" },
+    nerAnnotation: { tokens: ["INV-3337"], textIds: [4] },
+    entity: { id: 5, name: "Reference", color: "#DCE775", entityType: "NER" },
   },
   {
     id: 2,
     page: 1,
-    nerAnnotation: { tokens: ["INV-3337"], textIds: [4] },
-    entity: { id: 5, name: "Reference", color: "#DCE775", entityType: "NER" },
+    nerAnnotation: { tokens: ["Test", "Business"], textIds: [44, 45] },
+    entity: {
+      id: 3,
+      name: "Organisation",
+      color: "#81C784",
+      entityType: "NER",
+    },
   },
 ];
 
@@ -86,7 +87,10 @@ function App() {
             </li>
           ))}
           <li>
-            <Popup trigger={<button className="show-all">show all</button>} modal>
+            <Popup
+              trigger={<button className="show-all">show all</button>}
+              modal
+            >
               <div className="entity-popup">
                 <h4>All Annotations</h4>
                 {annotations.map((annotation) => {
