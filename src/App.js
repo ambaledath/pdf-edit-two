@@ -61,9 +61,8 @@ function App() {
   return (
     <section>
       <h1>React PDF NER Annotator</h1>
-
       <div className="entities">
-        <p>Entities</p>
+        <p>Select Entities</p>
         <ul className="entity-container">
           {entities.map((entity, index) => (
             <li
@@ -71,8 +70,7 @@ function App() {
               onMouseEnter={() => handleEnter(entity.id)}
               onMouseLeave={() => handleLeave(entity.id)}
             >
-              <span
-                role="button"
+              <button
                 className="entity-name"
                 style={
                   selectedEntity === index || selectedEntity === -1
@@ -84,16 +82,16 @@ function App() {
                 }
               >
                 {entity.name}
-              </span>
+              </button>
             </li>
           ))}
           <li>
-            <Popup trigger={<button>show all</button>} modal>
+            <Popup trigger={<button className="show-all">show all</button>} modal>
               <div className="entity-popup">
-                <h4>All Added Annotations</h4>
+                <h4>All Annotations</h4>
                 {annotations.map((annotation) => {
                   return (
-                    <div className="entity-name">
+                    <div className="entity-name" key={annotation?.id}>
                       {annotation?.entity?.name} :{" "}
                       <span className="ner-annotation">
                         {annotation?.nerAnnotation?.tokens.join(", ")}

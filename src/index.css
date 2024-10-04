@@ -13,3 +13,10 @@ h2 {
   text-align: center;
   font-weight: normal;
 }
+
+button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
